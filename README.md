@@ -38,17 +38,6 @@ Connect 1 resistor between pin GPIO36 (up) and ground. Connect the other resisto
 This will create an offset to your input signal to protect the esp32
 Connect a capacitor of 220nF to GPIO36. The other end of the capacitor is your audio line in
 
-             +3.3V
-               |                             ________ GPIO15
-              | | 4.7K                      |
-              | |                           |
-               |                            |
- Audio --||---- ----->GPIO36               \
-       220nF   |                            |
-              | | 4..7K                     |
-              | |                           |
-               |                            |
-              gnd                          gnd
 
 The program is running on both cores. Core 1 is used for the main loop and does the FFT analyses
 Core 0 is used for the webinterface. Both could run on 1 core but whenever the WIFI signal is disturbed,
